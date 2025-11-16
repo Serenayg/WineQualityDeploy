@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #8b0000; }
+        input { margin-bottom: 10px; padding: 8px; width: 250px; }
+        button { padding: 10px 20px; background-color: #8b0000; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #5a0000; }
+    </style>
+</head>
+<body>
+    <h1>Wine Quality Prediction</h1>
+
+    <form action="/predict" method="post">
+        <input type="text" name="fixed_acidity" placeholder="Fixed Acidity" required><br>
+        <input type="text" name="volatile_acidity" placeholder="Volatile Acidity" required><br>
+        <input type="text" name="citric_acid" placeholder="Citric Acid" required><br>
+        <input type="text" name="residual_sugar" placeholder="Residual Sugar" required><br>
+        <input type="text" name="chlorides" placeholder="Chlorides" required><br>
+        <input type="text" name="free_sulfur_dioxide" placeholder="Free Sulfur Dioxide" required><br>
+        <input type="text" name="total_sulfur_dioxide" placeholder="Total Sulfur Dioxide" required><br>
+        <input type="text" name="density" placeholder="Density" required><br>
+        <input type="text" name="pH" placeholder="pH" required><br>
+        <input type="text" name="sulphates" placeholder="Sulphates" required><br>
+        <input type="text" name="alcohol" placeholder="Alcohol" required><br>
+        
+        <button type="submit">Predict Quality</button>
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+
+</body>
+</html>
